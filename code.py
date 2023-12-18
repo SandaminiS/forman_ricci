@@ -8,7 +8,7 @@ nodes = ["S3A", "S3B", "S3G", "S3H", "S2C", "S2D", "S2I", "S1E", "S1L", "TC", "R
 #defining the directed edges with their weights
 edges = [
     ("S3A", "S2C", 1), ("S3B", "S2D", 3), ("S3G", "S2I", 1), ("S3H", "S2I", 2),
-    ("S2C", "S1E", 2), ("S2C", "R1K", 1), ("S2D", "S1E", 2), ("S2I", "S1L", 4), ("S2I", "R1K", 6),
+    ("S2C", "S1E", 2), ("S2C", "R1K", 1), ("S2D", "S1E", 2), ("S2I", "S1L", 4), ("S2I", "R1K", 6), ("S2I", "R1M", 5),
     ("S1E", "TC", 3), ("S1L", "TC", 6), 
     ("TC", "R1K", 4), ("TC", "R1M", 3),
     ("R1K", "R2N", 4), ("R1M", "R2O", 2), 
