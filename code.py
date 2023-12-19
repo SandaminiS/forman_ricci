@@ -20,17 +20,16 @@ def compute_forman_ricci(G, edge):
     # summation term
     summation_term = 0
     for e_v1 in G[v1]:
-        if e_v1 == v2:
-            continue
-        summation_term += 1/(G[v1][e_v1]['weight'] ** 0.5)
-
-    for e_v2 in G[v2]:
-        if e_v2 == v1:
-            continue
-        summation_term += 1/(G[v2][e_v2]['weight'] ** 0.5)
-
+        for e_v2 in G[v2]:
+            if e_v1 != e_v2 and G.has_edge(e_v1, e_v2):
+                w_v1 = G[v1][e_v1]['weight']
+                w_v2 = G[v2][e_v2]['weight']
+                w_e_v1 = G[e_v1][e_v2]['weight']
+                adj_vertices = (w_v1 / (w_e * (w_e_v1 ** 0.5))) + (w_v2 / (w_e * (w_e_v1 ** 0.5)))
+                summation_term = summation_term + adj_vertices
+                
     #Forman-Ricci curvature values
-    ricci_curvature = w_e * ((2 / w_e)  - summation_term)
+    ricci_curvature = w_e * ((w_v1 / w_e) + (w_v2 / w_e) - summation_term)
     return ricci_curvature
 
 #creating a new graph
@@ -42,5 +41,4 @@ G.add_weighted_edges_from(edges)
 
 #Forman-Ricci curvature values
 forman_ricci_curvatures = {e: compute_forman_ricci(G, e) for e in G.edges}
-for e in forman_ricci_curvatures.keys():
-    print(e, forman_ricci_curvatures[e])
+forman_ricci_curvatures
