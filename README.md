@@ -1,4 +1,4 @@
 # forman_ricci
 Forman Ricci curvature calculation for undirected network
 
-<img width="611" alt="graph" src="https://github.com/SandaminiS/forman_ricci/assets/58078193/5692bebb-1527-4fd6-b5ec-16a013ec3d61">
+<img width="610" alt="graph_1" src="https://github.com/SandaminiS/forman_ricci/assets/58078193/82afc58b-1ab9-4abf-a976-58f396328f4c">
